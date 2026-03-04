@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Oratilwe Botlhale Radikeledi</title>
+    <meta name="description" content="Portfolio of 20+ websites built by Oratilwe Botlhale Radikeledi. Web design, development, and digital solutions.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-bg: #f8fafc;
+            --secondary-bg: #ffffff;
+            --accent-bg: #f1f5f9;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #64748b;
+            --accent-color: #0ea5e9;
+            --accent-hover: #0284c7;
+            --border-color: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--accent-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(248, 250, 252, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary-bg) 0%, #e0f2fe 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.1) 0%, rgba(14, 165, 233, 0.05) 100%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--secondary-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .hero h1 span {
+            color: var(--accent-color);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent-color);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 2rem;
+            background: var(--secondary-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+        }
+
+        .filter-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--border-color);
+            background: var(--primary-bg);
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Projects Grid */
+        .projects-section {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--accent-bg);
+            color: var(--accent-color);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--secondary-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .project-image {
+            height: 220px;
+            background: linear-gradient(135deg, var(--accent-bg) 0%, #e0f2fe 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(14, 165, 233, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-image::before {
+            opacity: 1;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(15, 23, 42, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-link {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .project-card:hover .project-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .project-link:first-child {
+            transition-delay: 0.1s;
+        }
+
+        .project-link:last-child {
+            transition-delay: 0.2s;
+        }
+
+        .project-link:hover {
+            background: var(--accent-color);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-category {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .project-content p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            flex-grow: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech span {
+            padding: 0.25rem 0.75rem;
+            background: var(--accent-bg);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .project-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .project-client {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .project-date {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 6rem 2rem;
+            background: var(--secondary-bg);
+            position: relative;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: var(--primary-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent-color);
+            font-family: 'Playfair Display', serif;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .author-info h4 {
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Process Section */
+        .process-section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+        }
+
+        .process-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, #1e293b 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 500px;
+            height: 500px;
+            background: rgba(14, 165, 233, 0.1);
+            border-radius: 50%;
+        }
+
+        .cta-container {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(14, 165, 233, 0.39);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.23);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            border-color: white;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 2rem 1rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-logo span {
+            color: var(--accent-color);
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.25rem;
+        }
+
+        .social-link:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-text {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.875rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hide filtered items */
+        .project-card.hidden {
+            display: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-stats {
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero {
+                min-height: 50vh;
+                padding: 6rem 1rem 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .filter-container {
+                gap: 0.5rem;
+            }
+
+            .filter-btn {
+                padding: 0.4rem 1rem;
+                font-size: 0.875rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-section h2 {
+                font-size: 1.75rem;
+            }
+
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                <span>OB</span>Radikeledi
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">About</a></li>
+                <li><a href="index.html">Skills</a></li>
+                <li><a href="portfolio.html">Projects</a></li>
+                <li><a href="index.html">Experience</a></li>
+                <li><a href="index.html">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <i class="fas fa-briefcase"></i>
+                Portfolio
+            </div>
+            <h1>
+                Featured <span>Projects</span>
+            </h1>
+            <p class="hero-subtitle">
+            </p>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number">20+</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="filter-section">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="wordpress">WordPress</button>
+            <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+            <button class="filter-btn" data-filter="business">Business</button>
+            <button class="filter-btn" data-filter="business">Python</button>
+            <button class="filter-btn" data-filter="custom">Custom Code</button>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="section-header scroll-reveal">
+            <span class="section-tag">Portfolio</span>
+            <h2 class="section-title">Selected Works</h2>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1: Lumora Technologies -->
+            <div class="project-card scroll-reveal" data-category="wordpress business">
+                <div class="project-image">
+                    <img src="IMAGES/lumoratechnologies.png" alt="lumoratechnologies" class="project-image">
+                    <div class="project-overlay">
+                        <a href="https://lumoratechnologies.co.za/" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Digital Business</span>
+                    <h3>Lumora Technologies</h3>
+                    <p>Lumora Technologies is a leading digital agency specializing in creating exceptional web experiences, innovative mobile applications, and comprehensive digital solutions that drive business growth.</p>
+                    <div class="project-tech">
+                        <span>WordPress</span>
+                        <span>PHP</span>
+                        <span>Custom Theme</span>
+                        <span>SEO</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Lumora Technologies</span>
+                        <span class="project-date">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: SME Business -->
+            <div class="project-card scroll-reveal" data-category="wordpress business">
+                <div class="project-image">
+                    <img src="IMAGES/QRM.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="https://quiltsriskmanagers.co.za/" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Corporate</span>
+                    <h3>Quilts Risk Managers</h3>
+                    <p>Quilts Risk Managers (Pty) Ltd (QRM) is a multidisciplinary professional services company specialising in Quality Assurance, Risk Management, Inspection, Testing, Water & Sanitation Solutions, and Construction Services.</p>
+                    <div class="project-tech">
+                        <span>WordPress</span>
+                        <span>Elementor</span>
+                        <span>JavaScript</span>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">SME Founder</span>
+                        <span class="project-date">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card scroll-reveal" data-category="custom code">
+                <div class="project-image">
+                    <img src="IMAGES/securevoter.png" alt="SecureVoter" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Custom Code</span>
+                    <h3>Secure Voter Website</h3>
+                    <p>SecureVoter Voting Website: A voting website/system that might later implement Blockchain.</p>
+                    <div class="project-tech">
+                        <span>VS Code</span>
+                        <span>Animations</span>
+                        <span>CSS</span>
+                        <span>HTML</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-footer"></div>
+                        <span class="project-date">2025</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Student Accommodation -->
+            <div class="project-card scroll-reveal" data-category="python">
+                <div class="project-image">
+                    <img src="IMAGES/fitbuddy.png" alt="fitbudy" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Python</span>
+                    <h3>Fit-Buddy AI ChatBot</h3>
+                    <p>
+                        FitBuddy is an AI-driven health assistant designed to predict a person’s obesity risk based on lifestyle, diet, and activity habits.</p>
+                    <div class="project-tech">
+                        <span>Machine Learning</span>
+                        <span>Python</span>
+                        <span>VS Code</span>
+                    </div>
+                    <div class="project-footer">
+            
+                        <span class="project-date">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Professional Services -->
+            <div class="project-card scroll-reveal" data-category="wordpress business">
+                <div class="project-image">
+                    <img src="IMAGES/letu.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="https://salesletu.co.za/" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Professional Services</span>
+                    <h3>LeTu Global PTY LTD</h3>
+                    <p>LeTu Global (Pty) Ltd is a South African construction and property development company specialising in civil works, residential building, and turnkey housing. </p>
+                    <div class="project-tech">
+                        <span>WordPress</span>
+                        <span>Custom CSS</span>
+                        <span>Contact Forms</span>
+                        <span>Speed Optimized</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Managing Director</span>
+                        <span class="project-date">2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Construction Company -->
+            <div class="project-card scroll-reveal" data-category="web design">
+                <div class="project-image">
+                    <img src="IMAGES/construction.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Construction</span>
+                    <h3>Construction Company Showcase</h3>
+                    <p>A portfolio-focused website highlighting completed projects, services offered, and company history. Features project galleries, client testimonials, and quote request functionality.</p>
+                    <div class="project-tech">
+                        <span>WordPress</span>
+                        <span>Gallery System</span>
+                        <span>Mobile First</span>
+                        <span>SEO</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Construction Founder</span>
+                        <span class="project-date">2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Legal Practice -->
+            <div class="project-card scroll-reveal" data-category="wordpress business">
+                <div class="project-image">
+                    <img src="IMAGES/lawfirm.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Legal</span>
+                    <h3>Legal Practice Website</h3>
+                    <p>A professional website for a law firm featuring practice areas, attorney profiles, and legal resources. Designed with a focus on trust, authority, and client accessibility.</p>
+                    <div class="project-tech">
+                        <span>WordPress</span>
+                        <span>Secure Hosting</span>
+                        <span>SSL</span>
+                        <span>GDPR Compliant</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Legal Practice Owner</span>
+                        <span class="project-date">2022</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7: Logistics Company -->
+            <div class="project-card scroll-reveal" data-category="business custom">
+                <div class="project-image">
+                    <img src="IMAGES/QRM.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Logistics</span>
+                    <h3>Logistics Company Portal</h3>
+                    <p>A dynamic website for a logistics company featuring service tracking, quote calculators, and client portal integration. Built to streamline operations and improve customer communication.</p>
+                    <div class="project-tech">
+                        <span>Custom Development</span>
+                        <span>JavaScript</span>
+                        <span>API Integration</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Operations Manager</span>
+                        <span class="project-date">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8: E-Commerce Store -->
+            <div class="project-card scroll-reveal" data-category="ecommerce">
+                <div class="project-image">
+                    <img src="IMAGES/motocare.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">E-Commerce</span>
+                    <h3>Online Retail Store</h3>
+                    <p>A full-featured e-commerce platform with product catalog, shopping cart, payment integration, and inventory management. Optimized for conversions and mobile shopping.</p>
+                    <div class="project-tech">
+                        <span>WooCommerce</span>
+                        <span>WordPress</span>
+                        <span>Payment Gateway</span>
+                        <span>Analytics</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Retail Business Owner</span>
+                        <span class="project-date">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9: Shopify Store -->
+            <div class="project-card scroll-reveal" data-category="ecommerce">
+                <div class="project-image">
+                    <img src="IMAGES/fashionbusiness.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Fashion E-Commerce</span>
+                    <h3>Fashion Brand Shopify Store</h3>
+                    <p>A stylish Shopify store for a fashion brand featuring lookbooks, size guides, and Instagram integration. Custom theme modifications to match brand identity.</p>
+                    <div class="project-tech">
+                        <span>Shopify</span>
+                        <span>Liquid</span>
+                        <span>CSS</span>
+                        <span>App Integration</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Fashion Brand Owner</span>
+                        <span class="project-date">2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10: Webflow Site -->
+            <div class="project-card scroll-reveal" data-category="business">
+                <div class="project-image">
+                    <img src="IMAGES/itbusiness.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Tech Startup</span>
+                    <h3>Tech Startup Landing Page</h3>
+                    <p>A modern, animated landing page for a tech startup featuring product showcases, team sections, and investor information. Built with Webflow for maximum design flexibility.</p>
+                    <div class="project-tech">
+                        <span>Webflow</span>
+                        <span>Animations</span>
+                        <span>CMS</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Tech Startup CEO</span>
+                        <span class="project-date">2024</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card scroll-reveal" data-category="business">
+                <div class="project-image">
+                    <img src="IMAGES/itbusiness.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Tech Startup</span>
+                    <h3>Tech Startup Landing Page</h3>
+                    <p>A modern, animated landing page for a tech startup featuring product showcases, team sections, and investor information. Built with Webflow for maximum design flexibility.</p>
+                    <div class="project-tech">
+                        <span>Webflow</span>
+                        <span>Animations</span>
+                        <span>CMS</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Tech Startup CEO</span>
+                        <span class="project-date">2024</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card scroll-reveal" data-category="business">
+                <div class="project-image">
+                    <img src="IMAGES/itbusiness.png" alt="QRMs" class="project-image">
+                    <div class="project-overlay">
+                        <a href="#" class="project-link" title="View Live Site">
+                            <i class="fas fa-external-link-alt"></i>
+                        </a>
+                        <a href="#" class="project-link" title="View Case Study">
+                            <i class="fas fa-folder-open"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <span class="project-category">Tech Startup</span>
+                    <h3>Tech Startup Landing Page</h3>
+                    <p>A modern, animated landing page for a tech startup featuring product showcases, team sections, and investor information. Built with Webflow for maximum design flexibility.</p>
+                    <div class="project-tech">
+                        <span>Webflow</span>
+                        <span>Animations</span>
+                        <span>CMS</span>
+                        <span>Responsive</span>
+                    </div>
+                    <div class="project-footer">
+                        <span class="project-client">Tech Startup CEO</span>
+                        <span class="project-date">2024</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+
+    <!-- CTA Section -->
+    <section id="contact" class="cta-section">
+        <div class="cta-container">
+            <h2>Let's Build Something Amazing Together</h2>
+            <p>I'm currently available for freelance projects and full-time opportunities. Whether you need a website, web application, or cloud solution, let's discuss how I can help.</p>
+            <div>
+                <a href="mailto:botlhaleradikeledi@gmail.com" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Get In Touch
+                </a>
+                <a href="https://github.com/lumoraTech6" target="_blank" class="btn btn-secondary">
+                    <i class="fab fa-github"></i>
+                    View GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-code"></i>
+                <span>OB</span>Radikeledi
+            </div>
+            <p style="color: rgba(255,255,255,0.8); margin-bottom: 1rem;">
+                Building digital experiences that make a difference.
+            </p>
+            <div class="footer-social">
+                <a href="#" class="social-link" title="LinkedIn">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/lumoraTech6" class="social-link" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="social-link" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="mailto:botlhaleradikeledi@gmail.com" class="social-link" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p class="footer-text">
+                © 2024 Oratilwe Botlhale Radikeledi | Lumora Technologies. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+        // Navbar scroll effect
+        <script src="portfolio.js"></script>
+
+</body>
+</html>
