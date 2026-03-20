@@ -336,6 +336,7 @@
             box-shadow: var(--shadow-xl);
         }
 
+        /* FIX: project-image is the container div, not the img tag */
         .project-image {
             height: 220px;
             background: linear-gradient(135deg, var(--accent-bg) 0%, #e0f2fe 100%);
@@ -348,6 +349,14 @@
             overflow: hidden;
         }
 
+        /* FIX: style the img tags inside .project-image to fill the container */
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
         .project-image::before {
             content: '';
             position: absolute;
@@ -358,6 +367,7 @@
             background: linear-gradient(135deg, transparent 0%, rgba(14, 165, 233, 0.1) 100%);
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: 1;
         }
 
         .project-card:hover .project-image::before {
@@ -377,6 +387,7 @@
             gap: 1rem;
             opacity: 0;
             transition: opacity 0.3s ease;
+            z-index: 2;
         }
 
         .project-card:hover .project-overlay {
@@ -844,7 +855,7 @@
             }
         }
     </style>
-<base target="_blank">
+    <base target="_blank">
 </head>
 <body>
     <!-- Navigation -->
@@ -858,7 +869,7 @@
                 <li><a href="index.html">About</a></li>
                 <li><a href="index.html">Skills</a></li>
                 <li><a href="portfolio.html">Projects</a></li>
-                <li><a href="web_design.html"> Web Design Projects</a></li>
+                <li><a href="web_design.html">Web Design Projects</a></li>
                 <li><a href="index.html">Experience</a></li>
                 <li><a href="index.html">Contact</a></li>
             </ul>
@@ -878,8 +889,7 @@
             <h1>
                 Featured <span>Projects</span>
             </h1>
-            <p class="hero-subtitle">
-            </p>
+            <p class="hero-subtitle"></p>
             <div class="hero-stats">
                 <div class="stat">
                     <span class="stat-number">20+</span>
@@ -890,15 +900,16 @@
     </section>
 
     <!-- Filter Section -->
+    <!-- FIX: Each filter button now has a unique, correct data-filter value -->
     <section class="filter-section">
         <div class="filter-container">
             <button class="filter-btn active" data-filter="all">All Projects</button>
             <button class="filter-btn" data-filter="wordpress">WordPress</button>
             <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
             <button class="filter-btn" data-filter="business">Business</button>
-            <button class="filter-btn" data-filter="business">Python</button>
+            <button class="filter-btn" data-filter="python">Python</button>
             <button class="filter-btn" data-filter="custom">Custom Code</button>
-            <button class="filter-btn" data-filter="business">Web Designs</button>
+            <button class="filter-btn" data-filter="webdesign">Web Designs</button>
         </div>
     </section>
 
@@ -910,10 +921,11 @@
         </div>
 
         <div class="projects-grid">
+
             <!-- Project 1: Lumora Technologies -->
             <div class="project-card scroll-reveal" data-category="wordpress business">
                 <div class="project-image">
-                    <img src="IMAGES/lumoratechnologies.png" alt="lumoratechnologies" class="project-image">
+                    <img src="IMAGES/lumoratechnologies.png" alt="Lumora Technologies">
                     <div class="project-overlay">
                         <a href="https://lumoratechnologies.co.za/" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -940,10 +952,10 @@
                 </div>
             </div>
 
-            <!-- Project 2: SME Business -->
+            <!-- Project 2: Quilts Risk Managers -->
             <div class="project-card scroll-reveal" data-category="wordpress business">
                 <div class="project-image">
-                    <img src="IMAGES/QRM.png" alt="QRMs" class="project-image">
+                    <img src="IMAGES/QRM.png" alt="Quilts Risk Managers">
                     <div class="project-overlay">
                         <a href="https://quiltsriskmanagers.co.za/" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -956,7 +968,7 @@
                 <div class="project-content">
                     <span class="project-category">Corporate</span>
                     <h3>Quilts Risk Managers</h3>
-                    <p>Quilts Risk Managers (Pty) Ltd (QRM) is a multidisciplinary professional services company specialising in Quality Assurance, Risk Management, Inspection, Testing, Water & Sanitation Solutions, and Construction Services.</p>
+                    <p>Quilts Risk Managers (Pty) Ltd (QRM) is a multidisciplinary professional services company specialising in Quality Assurance, Risk Management, Inspection, Testing, Water &amp; Sanitation Solutions, and Construction Services.</p>
                     <div class="project-tech">
                         <span>WordPress</span>
                         <span>Elementor</span>
@@ -970,9 +982,11 @@
                 </div>
             </div>
 
-            <div class="project-card scroll-reveal" data-category="custom code">
+            <!-- Project 3: SecureVoter -->
+            <!-- FIX: Corrected broken project-footer div structure -->
+            <div class="project-card scroll-reveal" data-category="custom">
                 <div class="project-image">
-                    <img src="IMAGES/securevoter.png" alt="SecureVoter" class="project-image">
+                    <img src="IMAGES/securevoter.png" alt="SecureVoter">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -993,16 +1007,17 @@
                         <span>HTML</span>
                         <span>Responsive</span>
                     </div>
-                    <div class="project-footer"></div>
+                    <div class="project-footer">
                         <span class="project-date">2025</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3: Student Accommodation -->
+            <!-- Project 4: Fit-Buddy AI ChatBot -->
+            <!-- FIX: data-category changed to "python" to match filter button -->
             <div class="project-card scroll-reveal" data-category="python">
                 <div class="project-image">
-                    <img src="IMAGES/fitbuddy.png" alt="fitbudy" class="project-image">
+                    <img src="IMAGES/fitbuddy.png" alt="Fit-Buddy AI ChatBot">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -1012,24 +1027,22 @@
                 <div class="project-content">
                     <span class="project-category">Python</span>
                     <h3>Fit-Buddy AI ChatBot</h3>
-                    <p>
-                        FitBuddy is an AI-driven health assistant designed to predict a person’s obesity risk based on lifestyle, diet, and activity habits.</p>
+                    <p>FitBuddy is an AI-driven health assistant designed to predict a person's obesity risk based on lifestyle, diet, and activity habits.</p>
                     <div class="project-tech">
                         <span>Machine Learning</span>
                         <span>Python</span>
                         <span>VS Code</span>
                     </div>
                     <div class="project-footer">
-            
                         <span class="project-date">2023</span>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 4: Professional Services -->
+            <!-- Project 5: LeTu Global -->
             <div class="project-card scroll-reveal" data-category="wordpress business">
                 <div class="project-image">
-                    <img src="IMAGES/letu.png" alt="QRMs" class="project-image">
+                    <img src="IMAGES/letu.png" alt="LeTu Global">
                     <div class="project-overlay">
                         <a href="https://salesletu.co.za/" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -1042,7 +1055,7 @@
                 <div class="project-content">
                     <span class="project-category">Professional Services</span>
                     <h3>LeTu Global PTY LTD</h3>
-                    <p>LeTu Global (Pty) Ltd is a South African construction and property development company specialising in civil works, residential building, and turnkey housing. </p>
+                    <p>LeTu Global (Pty) Ltd is a South African construction and property development company specialising in civil works, residential building, and turnkey housing.</p>
                     <div class="project-tech">
                         <span>WordPress</span>
                         <span>Custom CSS</span>
@@ -1056,10 +1069,11 @@
                 </div>
             </div>
 
-            <!-- Project 5: Construction Company -->
-            <div class="project-card scroll-reveal" data-category="web design">
+            <!-- Project 6: Construction Company Showcase -->
+            <!-- FIX: data-category changed to "webdesign" to match filter button -->
+            <div class="project-card scroll-reveal" data-category="webdesign">
                 <div class="project-image">
-                    <img src="IMAGES/construction.png" alt="QRMs" class="project-image">
+                    <img src="IMAGES/construction.png" alt="Construction Company Showcase">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -1086,10 +1100,10 @@
                 </div>
             </div>
 
-            <!-- Project 6: Legal Practice -->
+            <!-- Project 7: Legal Practice -->
             <div class="project-card scroll-reveal" data-category="wordpress business">
                 <div class="project-image">
-                    <img src="IMAGES/lawfirm.png" alt="QRMs" class="project-image">
+                    <img src="IMAGES/lawfirm.png" alt="Legal Practice Website">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -1116,40 +1130,10 @@
                 </div>
             </div>
 
-            <!-- Project 7: Logistics Company -->
-            <div class="project-card scroll-reveal" data-category="business custom">
-                <div class="project-image">
-                    <img src="IMAGES/QRM.png" alt="QRMs" class="project-image">
-                    <div class="project-overlay">
-                        <a href="#" class="project-link" title="View Live Site">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        <a href="#" class="project-link" title="View Case Study">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <span class="project-category">Logistics</span>
-                    <h3>Logistics Company Portal</h3>
-                    <p>A dynamic website for a logistics company featuring service tracking, quote calculators, and client portal integration. Built to streamline operations and improve customer communication.</p>
-                    <div class="project-tech">
-                        <span>Custom Development</span>
-                        <span>JavaScript</span>
-                        <span>API Integration</span>
-                        <span>Responsive</span>
-                    </div>
-                    <div class="project-footer">
-                        <span class="project-client">Operations Manager</span>
-                        <span class="project-date">2023</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 8: E-Commerce Store -->
+            <!-- Project 9: Online Retail Store -->
             <div class="project-card scroll-reveal" data-category="ecommerce">
                 <div class="project-image">
-                    <img src="IMAGES/motocare.png" alt="QRMs" class="project-image">
+                    <img src="IMAGES/motocare.png" alt="Online Retail Store">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -1176,10 +1160,10 @@
                 </div>
             </div>
 
-            <!-- Project 9: Shopify Store -->
+            <!-- Project 10: Fashion Brand Shopify Store -->
             <div class="project-card scroll-reveal" data-category="ecommerce">
                 <div class="project-image">
-                    <img src="IMAGES/fashionbusiness.png" alt="QRMs" class="project-image">
+                    <img src="IMAGES/fashionbusiness.png" alt="Fashion Brand Shopify Store">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -1206,10 +1190,10 @@
                 </div>
             </div>
 
-            <!-- Project 10: Webflow Site -->
+            <!-- Project 11: Tech Startup Landing Page -->
             <div class="project-card scroll-reveal" data-category="business">
                 <div class="project-image">
-                    <img src="IMAGES/itbusiness.png" alt="QRMs" class="project-image">
+                    <img src="IMAGES/itbusiness.png" alt="Tech Startup Landing Page">
                     <div class="project-overlay">
                         <a href="#" class="project-link" title="View Live Site">
                             <i class="fas fa-external-link-alt"></i>
@@ -1236,69 +1220,8 @@
                 </div>
             </div>
 
-            <div class="project-card scroll-reveal" data-category="business">
-                <div class="project-image">
-                    <img src="IMAGES/itbusiness.png" alt="QRMs" class="project-image">
-                    <img src="IMAGES/itbusiness.png" alt="QRMs" class="project-image">
-                    <div class="project-overlay">
-                        <a href="#" class="project-link" title="View Live Site">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        <a href="#" class="project-link" title="View Case Study">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <span class="project-category">Tech Startup</span>
-                    <h3>Tech Startup Landing Page</h3>
-                    <p>A modern, animated landing page for a tech startup featuring product showcases, team sections, and investor information. Built with Webflow for maximum design flexibility.</p>
-                    <div class="project-tech">
-                        <span>Webflow</span>
-                        <span>Animations</span>
-                        <span>CMS</span>
-                        <span>Responsive</span>
-                    </div>
-                    <div class="project-footer">
-                        <span class="project-client">Tech Startup CEO</span>
-                        <span class="project-date">2024</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card scroll-reveal" data-category="business">
-                <div class="project-image">
-                    <img src="IMAGES/itbusiness.png" alt="QRMs" class="project-image">
-                    <img src="IMAGES/itbusiness.png" alt="QRMs" class="project-image">
-                    <div class="project-overlay">
-                        <a href="#" class="project-link" title="View Live Site">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        <a href="#" class="project-link" title="View Case Study">
-                            <i class="fas fa-folder-open"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <span class="project-category">Tech Startup</span>
-                    <h3>Tech Startup Landing Page</h3>
-                    <p>A modern, animated landing page for a tech startup featuring product showcases, team sections, and investor information. Built with Webflow for maximum design flexibility.</p>
-                    <div class="project-tech">
-                        <span>Webflow</span>
-                        <span>Animations</span>
-                        <span>CMS</span>
-                        <span>Responsive</span>
-                    </div>
-                    <div class="project-footer">
-                        <span class="project-client">Tech Startup CEO</span>
-                        <span class="project-date">2024</span>
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </section>
-
 
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
@@ -1310,7 +1233,7 @@
                     <i class="fas fa-envelope"></i>
                     Get In Touch
                 </a>
-                <a href="https://github.com/lumoraTech6" target="_blank" class="btn btn-secondary">
+                <a href="https://github.com/OratilweBotlhale" target="_blank" class="btn btn-secondary">
                     <i class="fab fa-github"></i>
                     View GitHub
                 </a>
@@ -1329,10 +1252,10 @@
                 Building digital experiences that make a difference.
             </p>
             <div class="footer-social">
-                <a href="#" class="social-link" title="LinkedIn">
+                <a href="https://www.linkedin.com/in/oratilwe-botlhale-radikeledi-1a133b292/" class="social-link" title="LinkedIn">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a href="https://github.com/lumoraTech6" class="social-link" title="GitHub">
+                <a href="https://github.com/OratilweBotlhale" class="social-link" title="GitHub">
                     <i class="fab fa-github"></i>
                 </a>
                 <a href="#" class="social-link" title="Twitter">
@@ -1348,8 +1271,8 @@
         </div>
     </footer>
 
-        // Navbar scroll effect
-        <script src="portfolio.js"></script>
+    <!-- FIX: Script tag is now correctly placed inside <body>, before </body> -->
+    <script src="portfolio.js"></script>
 
 </body>
 </html>
