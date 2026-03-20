@@ -867,8 +867,241 @@
                 height: 60px;
             }
         }
+
+        /* ── LIGHTBOX MODAL ── */
+        .lightbox-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(5, 10, 20, 0.96);
+            display: flex;
+            flex-direction: column;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.35s ease;
+        }
+
+        .lightbox-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        /* header bar */
+        .lightbox-header {
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .lightbox-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .lightbox-title-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--accent-color), var(--design-purple));
+            color: #fff;
+        }
+
+        .lightbox-close {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            background: rgba(255,255,255,0.18);
+            transform: rotate(90deg);
+        }
+
+        /* scrollable image grid */
+        .lightbox-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 2rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-color) transparent;
+        }
+
+        .lightbox-body::-webkit-scrollbar { width: 6px; }
+        .lightbox-body::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 3px;
+        }
+
+        .lightbox-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.25rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .lightbox-img-wrap {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: rgba(255,255,255,0.04);
+            cursor: zoom-in;
+            border: 1px solid rgba(255,255,255,0.07);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .lightbox-img-wrap:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .lightbox-img-wrap:hover img {
+            transform: scale(1.06);
+        }
+
+        /* caption on hover */
+        .lightbox-img-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.75rem 1rem;
+            background: linear-gradient(to top, rgba(5,10,20,0.85) 0%, transparent 100%);
+            color: rgba(255,255,255,0.85);
+            font-size: 0.8rem;
+            font-weight: 500;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .lightbox-img-wrap:hover .lightbox-img-caption {
+            opacity: 1;
+        }
+
+        /* fullscreen single image viewer */
+        .lightbox-zoom {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0,0,0,0.97);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease;
+        }
+
+        .lightbox-zoom.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .lightbox-zoom img {
+            max-width: 92vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 6px;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+        }
+
+        .lightbox-zoom-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #fff;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .lightbox-zoom-close:hover {
+            background: rgba(255,255,255,0.2);
+            transform: rotate(90deg);
+        }
+
+        /* "click to view images" hint on slide image */
+        .slide-image {
+            cursor: pointer;
+        }
+
+        .slide-view-hint {
+            position: absolute;
+            bottom: 1rem;
+            right: 1rem;
+            z-index: 3;
+            padding: 0.4rem 0.9rem;
+            background: rgba(14,165,233,0.9);
+            color: #fff;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            opacity: 0;
+            transform: translateY(6px);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .slide-content:hover .slide-view-hint {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 640px) {
+            .lightbox-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+                gap: 0.75rem;
+            }
+            .lightbox-header {
+                padding: 1rem;
+            }
+            .lightbox-body {
+                padding: 1rem;
+            }
+        }
     </style>
-<base target="_blank">
+    <base target="_blank">
 </head>
 <body>
     <!-- Navigation -->
@@ -895,8 +1128,9 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
+            <!-- FIX: replaced invalid fa-sparkles (Pro-only) with fa-star -->
             <div class="hero-badge">
-                <i class="fas fa-sparkles"></i>
+                <i class="fas fa-star"></i>
                 Creative Design Portfolio
             </div>
             <h1>
@@ -929,11 +1163,12 @@
         <div class="swiper mySwiper">
             <div class="swiper-wrapper">
 
-                <!-- Slide 1: Medical Practice - Figma -->
+                <!-- Slide 1: Quilts Risk Managers -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/QRM.png" alt="QRM Website">
+                        <div class="slide-image" data-project-index="0" onclick="openLightbox(0)">
+                            <img src="IMAGES/QRM.png" alt="Quilts Risk Managers Website">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">Corporate</span>
                                 <h3>Quilts Risk Managers</h3>
@@ -968,11 +1203,12 @@
                     </div>
                 </div>
 
-                <!-- Slide 2: Fashion Brand - Canva -->
+                <!-- Slide 2: Fashion Brand -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/fashionbusiness.png" alt="Medical Practice Website">
+                        <div class="slide-image" data-project-index="1" onclick="openLightbox(1)">
+                            <img src="IMAGES/fashionbusiness.png" alt="Fashion Brand Identity">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">E-Commerce</span>
                                 <h3>Fashion Brand Identity</h3>
@@ -1007,11 +1243,12 @@
                     </div>
                 </div>
 
-                <!-- Slide 3: SME Business - WordPress -->
+                <!-- Slide 3: Bakery -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                          <img src="IMAGES/sweetbliss.png">
+                        <div class="slide-image" data-project-index="2" onclick="openLightbox(2)">
+                            <img src="IMAGES/sweetbliss.png" alt="Sweet Bliss Bakery Website">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">Bakery</span>
                                 <h3>Bakery with Employee Portal Design</h3>
@@ -1046,11 +1283,14 @@
                     </div>
                 </div>
 
-                <!-- Slide 4: Student Housing - Figma -->
+                <!-- Slide 4: Property Platform -->
+                <!-- FIX: renamed image reference — spaces in filenames break in many environments.
+                     Rename your actual file to: screenshot-2025-12-16.png -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/Screenshot 2025-12-16 150332.png" alt="Medical Practice Website">
+                        <div class="slide-image" data-project-index="3" onclick="openLightbox(3)">
+                            <img src="IMAGES/res1.png" alt="Property Platform UI">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">Real Estate</span>
                                 <h3>Property Platform UI</h3>
@@ -1085,11 +1325,12 @@
                     </div>
                 </div>
 
-                <!-- Slide 5: Legal Practice - WordPress -->
+                <!-- Slide 5: Legal Practice -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/lawfirm.png" alt="Medical Practice Website">
+                        <div class="slide-image" data-project-index="4" onclick="openLightbox(4)">
+                            <img src="IMAGES/lawfirm.png" alt="Legal Firm Website">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">Legal</span>
                                 <h3>Legal Firm Website</h3>
@@ -1124,11 +1365,12 @@
                     </div>
                 </div>
 
-                <!-- Slide 6: Construction - Canva -->
+                <!-- Slide 6: Construction Brand -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/letu.png" alt="Medical Practice Website">
+                        <div class="slide-image" data-project-index="5" onclick="openLightbox(5)">
+                            <img src="IMAGES/letu.png" alt="Construction Company Brand">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">Construction</span>
                                 <h3>Construction Company Brand</h3>
@@ -1163,11 +1405,12 @@
                     </div>
                 </div>
 
-                <!-- Slide 7: Tech Startup - Figma -->
+                <!-- Slide 7: Tech Startup -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/itbusiness.png" alt="Medical Practice Website">
+                        <div class="slide-image" data-project-index="6" onclick="openLightbox(6)">
+                            <img src="IMAGES/itbusiness.png" alt="Tech Startup Landing Page">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">Technology</span>
                                 <h3>Startup Landing Page</h3>
@@ -1202,11 +1445,12 @@
                     </div>
                 </div>
 
-                <!-- Slide 8: Shopify Store - WordPress -->
+                <!-- Slide 8: Flower Shopify Store -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/snowflowers.png" alt="Medical Practice Website">
+                        <div class="slide-image" data-project-index="7" onclick="openLightbox(7)">
+                            <img src="IMAGES/snowflowers.png" alt="Flower Shopify Store">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">E-Commerce</span>
                                 <h3>Flower Shopify Store</h3>
@@ -1241,11 +1485,12 @@
                     </div>
                 </div>
 
-                <!-- Slide 9: Logistics - Figma -->
+                <!-- Slide 9: Logistics Portal -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/trucking.png">
+                        <div class="slide-image" data-project-index="8" onclick="openLightbox(8)">
+                            <img src="IMAGES/trucking.png" alt="Logistics Portal Dashboard">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">Logistics</span>
                                 <h3>Logistics Portal</h3>
@@ -1280,11 +1525,12 @@
                     </div>
                 </div>
 
-                <!-- Slide 10: Lumora Brand - Canva -->
+                <!-- Slide 10: Lumora Technologies Brand -->
                 <div class="swiper-slide">
                     <div class="slide-content">
-                        <div class="slide-image">
-                            <img src="IMAGES/lumoratechnologies.png" alt="Medical Practice Website">
+                        <div class="slide-image" data-project-index="9" onclick="openLightbox(9)">
+                            <img src="IMAGES/lumoratechnologies.png" alt="Lumora Technologies Brand">
+                            <span class="slide-view-hint"><i class="fas fa-images"></i> View Images</span>
                             <div class="slide-overlay">
                                 <span class="slide-category">Branding</span>
                                 <h3>Lumora Technologies Brand</h3>
@@ -1327,32 +1573,44 @@
             <div class="swiper-pagination"></div>
         </div>
 
-        <!-- Thumbnail Navigation -->
-        
+        <!-- FIX: Restored complete thumbnail section with proper opening and closing divs -->
+        <div class="thumbnail-section">
+            <div class="thumbnail-container">
+                <div class="thumbnail active">
+                    <img src="IMAGES/QRM.png" alt="Quilts Risk Managers thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/fashionbusiness.png" alt="Fashion Brand thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/sweetbliss.png" alt="Bakery thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/screenshot-2025-12-16.png" alt="Property Platform thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/lawfirm.png" alt="Legal Firm thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/letu.png" alt="Construction Brand thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/itbusiness.png" alt="Tech Startup thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/snowflowers.png" alt="Flower Store thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/trucking.png" alt="Logistics Portal thumbnail">
+                </div>
+                <div class="thumbnail">
+                    <img src="IMAGES/lumoratechnologies.png" alt="Lumora Technologies thumbnail">
+                </div>
+            </div>
         </div>
+
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="stats-container">
-            <div class="stat-item">
-                <span class="stat-number">20+</span>
-                <span class="stat-label">Websites Designed</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">15+</span>
-                <span class="stat-label">Happy Clients</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">3</span>
-                <span class="stat-label">Design Tools</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">100%</span>
-                <span class="stat-label">Client Satisfaction</span>
-            </div>
-        </div>
-    </section>
 
     <!-- CTA Section -->
     <section id="contact" class="cta-section">
@@ -1365,6 +1623,30 @@
             </a>
         </div>
     </section>
+
+    <!-- ── LIGHTBOX MODAL ── -->
+    <div class="lightbox-overlay" id="lightboxOverlay" role="dialog" aria-modal="true" aria-label="Project images">
+        <div class="lightbox-header">
+            <div class="lightbox-title">
+                <span class="lightbox-title-badge" id="lightboxBadge">Gallery</span>
+                <span id="lightboxProjectName">Project Images</span>
+            </div>
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close gallery">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="lightbox-body">
+            <div class="lightbox-grid" id="lightboxGrid"></div>
+        </div>
+    </div>
+
+    <!-- Fullscreen zoom viewer -->
+    <div class="lightbox-zoom" id="lightboxZoom">
+        <button class="lightbox-zoom-close" id="lightboxZoomClose" aria-label="Close zoom">
+            <i class="fas fa-times"></i>
+        </button>
+        <img id="lightboxZoomImg" src="" alt="Zoomed image">
+    </div>
 
     <!-- Footer -->
     <footer>
@@ -1386,7 +1668,7 @@
                 <a href="#" class="social-link" title="Dribbble">
                     <i class="fab fa-dribbble"></i>
                 </a>
-                <a href="mailto:botlhaleradikeledi@gmail.com" class="social-link" title="Email">
+                <a href="/cdn-cgi/l/email-protection#99fbf6edf5f1f8f5fcebf8fdf0f2fcf5fcfdf0d9fef4f8f0f5b7faf6f4" class="social-link" title="Email">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
@@ -1397,10 +1679,212 @@
     </footer>
 
     <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 
     <script>
-        // Initialize Swiper
+        // ── PROJECT IMAGE DATA ──
+        // Each project maps to its slide index (0-9).
+        // Add as many images as you have for each project.
+        const projectData = [
+            {
+                name: "Quilts Risk Managers",
+                category: "Corporate",
+                images: [
+                    { src: "IMAGES/QRM.png", caption: "Homepage" },
+                    { src: "IMAGES/QRMServices.png", caption: "Services Page" },
+                    { src: "IMAGES/QRMhome1.png", caption: "Homepage" },
+                    {src: "IMAGES/QRMHome2.png", caption: "Homepage" },
+                    { src: "IMAGES/QRMAccred.png", caption: "Accreditations" },
+                    { src: "IMAGES/QRMAccred1.png", caption: "Accreditations" },
+                    { src: "IMAGES/QRMContact.png", caption: "Contact" },
+                    {src: "IMAGES/QRMContact (2).png", caption: "Homepage" },
+                ]
+            },
+            {
+                name: "Fashion Brand Identity",
+                category: "E-Commerce",
+                images: [
+                    { src: "IMAGES/fashionbusiness.png", caption: "Brand Overview" },
+                    { src: "IMAGES/fashion2.png", caption: "Brand Overview" },
+                    { src: "IMAGES/fashion3.png", caption: "Brand Overview" },
+                    { src: "IMAGES/fashion4.png", caption: "Brand Overview" },
+                    { src: "IMAGES/fashion5.png", caption: "Social Media Kit" },
+                    { src: "IMAGES/fashion6.png", caption: "Colour Palette" },
+                    { src: "IMAGES/fashion7.png", caption: "Colour Palette" },
+                    { src: "IMAGES/fashion8.png", caption: "Colour Palette" },
+                    { src: "IMAGES/fashion9.png", caption: "Colour Palette" },
+                    
+                ]
+            },
+            {
+                name: "Sweet Bliss Bakery",
+                category: "Bakery",
+                images: [
+                    { src: "IMAGES/sweetbliss.png", caption: "Homepage" },
+                    { src: "IMAGES/sweetbliss.png", caption: "Menu Page" },
+                    { src: "IMAGES/sweetbliss.png", caption: "Employee Portal" },
+                ]
+            },
+            {
+                name: "Property Platform UI",
+                category: "Real Estate",
+                images: [
+                    { src: "IMAGES/res1.png", caption: "Search Interface" },
+                    { src: "IMAGES/res2.png", caption: "Listing Detail" },
+                    { src: "IMAGES/res3.png", caption: "Listing Detail" },
+                    { src: "IMAGES/res4.png", caption: "Listing Detail" },
+                    { src: "IMAGES/res5.png", caption: "Listing Detail" },
+                    { src: "IMAGES/res6.png", caption: "Listing Detail" },
+                    { src: "IMAGES/res7.png", caption: "Application Form" },
+                ]
+            },
+            {
+                name: "Legal Firm Website",
+                category: "Legal",
+                images: [
+                    { src: "IMAGES/lawfirm.png", caption: "Homepage" },
+                    { src: "IMAGES/lawfirm.png", caption: "Practice Areas" },
+                    { src: "IMAGES/lawfirm.png", caption: "Attorney Profiles" },
+                ]
+            },
+            {
+                name: "Construction Company Brand",
+                category: "Construction",
+                images: [
+                    { src: "IMAGES/letu.png", caption: "Logo Design" },
+                    { src: "IMAGES/letu.png", caption: "Business Card" },
+                    { src: "IMAGES/letu.png", caption: "Letterhead" },
+                ]
+            },
+            {
+                name: "Startup Landing Page",
+                category: "Technology",
+                images: [
+                    { src: "IMAGES/itbusiness.png", caption: "Hero Section" },
+                    { src: "IMAGES/tech2.png", caption: "Product Showcase" },
+                    { src: "IMAGES/tech3.png", caption: "Investor Section" },
+                    { src: "IMAGES/tech4.png", caption: "Investor Section" },
+                ]
+            },
+            {
+                name: "Flower Shopify Store",
+                category: "E-Commerce",
+                images: [
+                    { src: "IMAGES/snowflowers.png", caption: "Storefront" },
+                    { src: "IMAGES/snow1.png", caption: "Product Page" },
+                    { src: "IMAGES/snow2.png", caption: "Product Page" },
+                    { src: "IMAGES/snow3.png", caption: "Product Page" },
+                    { src: "IMAGES/snow4.png", caption: "Instagram Feed" },
+                ]
+            },
+            {
+                name: "Logistics Portal",
+                category: "Logistics",
+                images: [
+                    { src: "IMAGES/trucking.png", caption: "Dashboard" },
+                    { src: "IMAGES/trucking.png", caption: "Tracking View" },
+                    { src: "IMAGES/trucking.png", caption: "Quote Calculator" },
+                ]
+            },
+            {
+                name: "Lumora Technologies Brand",
+                category: "Branding",
+                images: [
+                    { src: "IMAGES/lumoratechnologies.png", caption: "Brand System" },
+                    { src: "IMAGES/lumoratechnologies.png", caption: "Logo Variations" },
+                    { src: "IMAGES/lumoratechnologies.png", caption: "Social Media Kit" },
+                ]
+            },
+        ];
+
+        // ── LIGHTBOX ──
+        const overlay   = document.getElementById('lightboxOverlay');
+        const grid      = document.getElementById('lightboxGrid');
+        const badge     = document.getElementById('lightboxBadge');
+        const nameEl    = document.getElementById('lightboxProjectName');
+        const closeBtn  = document.getElementById('lightboxClose');
+        const zoomPanel = document.getElementById('lightboxZoom');
+        const zoomImg   = document.getElementById('lightboxZoomImg');
+        const zoomClose = document.getElementById('lightboxZoomClose');
+
+        function openLightbox(index) {
+            const project = projectData[index];
+            if (!project) return;
+
+            // Pause swiper autoplay while modal is open
+            swiper.autoplay.stop();
+
+            // Populate header
+            badge.textContent   = project.category;
+            nameEl.textContent  = project.name;
+
+            // Build image grid
+            grid.innerHTML = '';
+            project.images.forEach((img, i) => {
+                const wrap = document.createElement('div');
+                wrap.className = 'lightbox-img-wrap';
+                wrap.style.animationDelay = `${i * 60}ms`;
+                wrap.innerHTML = `
+                    <img src="${img.src}" alt="${img.caption}" loading="lazy">
+                    <div class="lightbox-img-caption">${img.caption}</div>
+                `;
+                wrap.addEventListener('click', () => openZoom(img.src, img.caption));
+                grid.appendChild(wrap);
+
+                // Staggered fade-in
+                wrap.style.opacity = '0';
+                wrap.style.transform = 'translateY(16px)';
+                requestAnimationFrame(() => {
+                    setTimeout(() => {
+                        wrap.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                        wrap.style.opacity = '1';
+                        wrap.style.transform = 'translateY(0)';
+                    }, i * 70);
+                });
+            });
+
+            // Show modal
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            overlay.classList.remove('open');
+            document.body.style.overflow = '';
+            swiper.autoplay.start();
+        }
+
+        function openZoom(src, caption) {
+            zoomImg.src = src;
+            zoomImg.alt = caption;
+            zoomPanel.classList.add('open');
+        }
+
+        function closeZoom() {
+            zoomPanel.classList.remove('open');
+            zoomImg.src = '';
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+        zoomClose.addEventListener('click', closeZoom);
+
+        // Close on backdrop click
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) closeLightbox();
+        });
+        zoomPanel.addEventListener('click', (e) => {
+            if (e.target === zoomPanel) closeZoom();
+        });
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                if (zoomPanel.classList.contains('open')) closeZoom();
+                else if (overlay.classList.contains('open')) closeLightbox();
+            }
+        });
+
+        // ── SWIPER ──
         const swiper = new Swiper(".mySwiper", {
             slidesPerView: "auto",
             centeredSlides: true,
@@ -1424,34 +1908,21 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
-            keyboard: {
-                enabled: true,
-            },
+            keyboard: { enabled: true },
             autoplay: {
                 delay: 5000,
                 disableOnInteraction: false,
                 pauseOnMouseEnter: true,
             },
             breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: "auto",
-                    spaceBetween: 30,
-                },
+                640: { slidesPerView: 1, spaceBetween: 20 },
+                768: { slidesPerView: "auto", spaceBetween: 30 },
             },
             on: {
                 slideChange: function () {
-                    // Update active thumbnail
                     const activeIndex = this.realIndex;
-                    document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
-                        if (index === activeIndex) {
-                            thumb.classList.add('active');
-                        } else {
-                            thumb.classList.remove('active');
-                        }
+                    document.querySelectorAll('.thumbnail').forEach((thumb, i) => {
+                        thumb.classList.toggle('active', i === activeIndex);
                     });
                 },
             },
@@ -1459,19 +1930,13 @@
 
         // Thumbnail click handlers
         document.querySelectorAll('.thumbnail').forEach((thumb, index) => {
-            thumb.addEventListener('click', () => {
-                swiper.slideToLoop(index);
-            });
+            thumb.addEventListener('click', () => swiper.slideToLoop(index));
         });
 
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            document.getElementById('navbar')
+                .classList.toggle('scrolled', window.scrollY > 50);
         });
 
         // Mobile menu toggle
@@ -1480,16 +1945,13 @@
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
 
-        // Smooth scroll
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
             });
         });
