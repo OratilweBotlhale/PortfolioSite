@@ -1,600 +1,144 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oratilwe Botlhale Radikeledi | Full-Stack Developer & Cloud Architect</title>
-    <meta name="description" content="Portfolio of Oratilwe Botlhale Radikeledi - IT Graduate, Web Developer, Software Developer & Aspiring Cloud Architect. 20+ WordPress sites built.">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<base target="_blank">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070515">
+  <meta name="description" content="Portfolio of Oratilwe Botlhale Radikeledi — full-stack developer, web designer and aspiring cloud architect in Johannesburg.">
+  <title>Oratilwe Radikeledi | Full-Stack Developer & Web Designer</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23070515'/%3E%3Cpath d='M13 32 25 20v8h14v-8l12 12-12 12v-8H25v8Z' fill='%2354f7d1'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <i class="fas fa-code"></i>
-                <span>OB</span>Radikeledi
-            </a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="portfolio.html">Projects</a></li>
-                <li><a href="web_design.html">Web Design Projects</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Oratilwe Radikeledi home"><span>O</span>BR</a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#journey">Journey</a>
+      <a class="nav-cta" href="#contact">Let's Talk <span>↗</span></a>
     </nav>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-circle"></i>
-                    Available for Opportunities
-                </div>
-                <h1>
-                    Hi, I'm <span>Oratilwe Botlhale Radikeledi</span>
-                </h1>
-                <p class="hero-subtitle">Full-Stack Developer • Web Designer • Aspiring Cloud Architect</p>
-                <p class="hero-description">
-                    Recent IT Graduate and current Advanced Diploma student with expertise in IT Networking, building websites and developing modern web solutions. 
-                    Passionate about creating and mastering her skills in the Tech field.
-                </p>
-                <div class="hero-buttons">
-                    <a href="portfolio.html" class="btn btn-primary">
-                        <i class="fas fa-eye"></i>
-                        View My Work
-                    </a>
-                    <a href="#contact" class="btn btn-secondary">
-                        <i class="fas fa-paper-plane"></i>
-                        Get In Touch
-                    </a>
-                    <a href="cv.pdf" class="btn btn-primary">
-                        View CV
-                            </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">20+</span>
-                        <span class="stat-label">Websites Built</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">8+</span>
-                        <span class="stat-label">Technologies</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">1</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="code-window">
-                    <div class="code-header">
-                        <div class="dot dot-red"></div>
-                        <div class="dot dot-yellow"></div>
-                        <div class="dot dot-green"></div>
-                        <span style="margin-left: 1rem; color: var(--text-muted); font-size: 0.875rem;">developer.js</span>
-                    </div>
-                    <div class="code-content">
-                        <div class="code-line">
-                            <span class="keyword">const</span> <span class="function">developer</span> = {
-                        </div>
-                        <div class="code-line">
-                            &nbsp;&nbsp;name: <span class="string">"Oratilwe"</span>,
-                        </div>
-                        <div class="code-line">
-                            &nbsp;&nbsp;role: <span class="string">"Full-Stack Dev"</span>,
-                        </div>
-                        <div class="code-line">
-                            &nbsp;&nbsp;passion: <span class="string">"Building things"</span>,
-                        </div>
-                        <div class="code-line">
-                            &nbsp;&nbsp;<span class="function">createAwesome</span>: () => <span class="string">"Let's code!"</span>
-                        </div>
-                        <div class="code-line">};</div>
-                    </div>
-                </div>
-            </div>
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Johannesburg, South Africa</p>
+        <h1>Building bold<br><em>digital systems</em><br>that work.</h1>
+        <p class="hero-intro">I’m <strong>Oratilwe Botlhale Radikeledi</strong> a full-stack developer, web designer and aspiring cloud architect turning business ideas into fast, functional digital products.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#work">View My Work <span>↓</span></a>
+          <a class="button secondary" href="#contact">Contact Me</a>
+          <a class="text-link" href="Oratilwe_CV.pdf" download>Download CV <span>↗</span></a>
         </div>
+      </div>
+      <div class="hero-visual reveal" aria-label="Code-inspired visual showing Oratilwe's roles">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="code-card">
+          <div class="window-dots"><i></i><i></i><i></i><span>profile.ts</span></div>
+          <pre><code><b>const</b> developer = {
+  name: <em>"Oratilwe"</em>,
+  focus: [
+    <em>"Full-Stack"</em>,
+    <em>"AI / ML"</em>,
+    <em>"Cloud"</em>
+  ],
+  status: <strong>"building"</strong>
+};</code></pre>
+        </div>
+        <div class="float-label label-one">DESIGN × CODE</div>
+        <div class="float-label label-two">AVAILABLE FOR PROJECTS</div>
+      </div>
+      <div class="stats reveal">
+        <div><strong>20<span>+</span></strong><p>Live Websites</p></div>
+        <div><strong>13</strong><p>Distinctions</p></div>
+        <div><strong>97<span>%</span></strong><p>ML Model Accuracy</p></div>
+        <div><strong>2<span>+</span></strong><p>Years Building</p></div>
+      </div>
     </section>
 
-        <!-- Skills Section -->
-    <section id="skills" class="section" style="background: var(--secondary-bg);">
-            <div class="section-header scroll-reveal">
-                <span class="section-tag">Technical Arsenal</span>
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">
-                    A comprehensive toolkit spanning frontend, backend, design, and cloud technologies.
-                </p>
-            </div>
-            <div class="skills-container">
-                <div class="skill-category scroll-reveal">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h3>Frontend Development</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">HTML5</span>
-                        <span class="skill-tag">CSS3</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Responsive Design</span>
-                    </div>
-                    <div class="skill-level">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.875rem; color: var(--text-muted);">Proficiency</span>
-                            <span style="font-size: 0.875rem; color: var(--accent-color); font-weight: 600;">Advanced</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%;"></div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="skill-category scroll-reveal">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-server"></i>
-                        </div>
-                        <h3>Backend & Languages</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">PHP</span>
-                        <span class="skill-tag">Powershell</span>
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">MySQL</span>
-                    </div>
-                    <div class="skill-level">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.875rem; color: var(--text-muted);">Proficiency</span>
-                            <span style="font-size: 0.875rem; color: var(--accent-color); font-weight: 600;">Good</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="skill-category scroll-reveal">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-palette"></i>
-                        </div>
-                        <h3>Design & No-Code</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Figma</span>
-                        <span class="skill-tag">Canva</span>
-                        <span class="skill-tag">WordPress</span>
-                        <span class="skill-tag">Shopify</span>
-                        <span class="skill-tag">Webflow</span>
-                    </div>
-                    <div class="skill-level">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.875rem; color: var(--text-muted);">Proficiency</span>
-                            <span style="font-size: 0.875rem; color: var(--accent-color); font-weight: 600;">Expert</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 95%;"></div>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="skill-category scroll-reveal">
-                    <div class="skill-header">
-                        <div class="skill-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud & DevOps</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS (Learning)</span>
-                        <span class="skill-tag">Azure (Learning)</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">GitHub</span>
-                    </div>
-                    <div class="skill-level">
-                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                            <span style="font-size: 0.875rem; color: var(--text-muted);">Proficiency</span>
-                            <span style="font-size: 0.875rem; color: var(--accent-color); font-weight: 600;">Beginner</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 50%;"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <section class="marquee" aria-label="Specialisms"><div>FULL-STACK DEVELOPMENT <span>✦</span> WEB DESIGN <span>✦</span> AI & MACHINE LEARNING <span>✦</span> CLOUD TECHNOLOGY <span>✦</span> FULL-STACK DEVELOPMENT <span>✦</span> WEB DESIGN <span>✦</span></div></section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="section-header scroll-reveal">
-            <span class="section-tag">About Me</span>
-            <h2 class="section-title">Bridging Design & Development</h2>
-            <p class="section-subtitle">
-                A versatile technologist who combines creative design thinking with robust development skills 
-                to deliver comprehensive digital solutions.
-            </p>
+    <section id="about" class="about section-shell">
+      <div class="section-kicker reveal">01 / About</div>
+      <div class="about-grid">
+        <h2 class="reveal">Developer mind.<br><span>Designer eye.</span></h2>
+        <div class="about-copy reveal">
+          <p class="lead">I’m a versatile IT graduate who enjoys the whole journey from shaping an idea and designing the interface to developing, testing and maintaining the final system.</p>
+          <p>I work as a Junior Web Designer at Point B Agency and founded <strong>Lumora Technologies</strong>, where I build and support production websites and software solutions for SMEs. My foundation spans Java, Python, PHP, SQL, JavaScript and modern web development, with growing expertise in AI and cloud technologies.</p>
+          <p>I’m currently completing an Advanced Diploma in Information Technology at Vaal University of Technology, focused on artificial intelligence, advanced databases, UX design and emerging technologies.</p>
         </div>
-        <div class="about-grid">
-            <div class="about-content scroll-reveal">
-                <h3>My Journey in Tech</h3>
-                <p>
-                    I am a Software Development major and the founder of Lumora Technologies, where I design and develop digital solutions that combine clean user experience with strong technical structure. 
-                    My background includes Java development, SQL database architecture, web development, and AI-based projects focused on data integrity and performance.
-
-                <p>Through academic and practical projects, I have built secure systems, predictive models, and custom web platforms, always focusing on functionality, scalability, and user impact. 
-I am particularly interested in how technology supports business operations, improves decision-making, and strengthens system reliability.</p>
-
-               <p> I am currently completing my Advanced Diploma in IT, expanding my knowledge in Artificial Intelligence, IT management, and emerging technologies. 
-                My goal is to grow into a well-rounded technology professional who can design systems that are not only efficient, but also secure, reliable, and strategically valuable.
-                </p>
-                
-            </div>
-            <div class="about-highlights scroll-reveal">
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <i class="fas fa-star"></i>
-                    </div>               
-                    <div class="highlight-text">
-                        <h4>Cum Laude Graduate</h4>
-                        <p>Completed my National Diploam in IT with a Cum Laude</p>
-                    </div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>               
-                    <div class="highlight-text">
-                        <h4>Advanced Diploma Student</h4>
-                        <p>Currently completing Advanced Diploma in Information Technology</p>
-                    </div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <div class="highlight-text">
-                        <h4>Aspiring Cloud Architect</h4>
-                        <p>Building expertise in cloud infrastructure and solutions</p>
-                    </div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <i class="fas fa-earth"></i>
-                    </div>               
-                    <div class="highlight-text">
-                        <h4>Cisco Certification</h4>
-                        <p>Currently Holding 2 Cisco Networking Cetifications</p>
-                    </div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="highlight-text">
-                        <h4>Design-Driven Developer</h4>
-                        <p>Proficient in Figma, Canva, and UI/UX best practices</p>
-                    </div>
-                </div>
-                <div class="highlight-item">
-                    <div class="highlight-icon">
-                        <i class="fas fa-wordpress"></i>
-                    </div>
-                    <div class="highlight-text">
-                        <h4>WordPress Expert</h4>
-                        <p>20+ websites built using WordPress and custom solutions</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      </div>
+      <div class="credential-grid reveal">
+        <article><b>01</b><h3>Information Technology Graduate</h3><p>Diploma completed with a 73% weighted average and 13 academic distinctions.</p></article>
+        <article><b>02</b><h3>Cisco Certified</h3><p>CCNAv7 and IT Essentials credentials across networking, hardware and software.</p></article>
+        <article><b>03</b><h3>Production Tested</h3><p>20+ live systems built and maintained across multiple industries.</p></article>
+        <article><b>04</b><h3>Design Driven</h3><p>IBM UX certified, with hands-on UI/UX, Figma and digital design experience.</p></article>
+      </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="section-header scroll-reveal">
-            <span class="section-tag">Portfolio</span>
-            <h2 class="section-title">Featured Projects</h2>
-            <p class="section-subtitle">
-                A selection of projects showcasing my expertise in web development, design, and problem-solving.
-            </p>
+    <section id="skills" class="skills-section">
+      <div class="section-shell">
+        <div class="section-kicker light reveal">02 / Technical Arsenal</div>
+        <div class="skills-heading reveal"><h2>What I build with.</h2><p>From interface to infrastructure — a practical stack used across live client work, academic systems and independent projects.</p></div>
+        <div class="skills-grid">
+          <article class="skill-card accent-blue reveal"><div class="skill-icon">&lt;/&gt;</div><p>01</p><h3>Frontend</h3><div class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Responsive Design</span><span>UI/UX</span></div></article>
+          <article class="skill-card accent-purple reveal"><div class="skill-icon">{ }</div><p>02</p><h3>Backend & Languages</h3><div class="tags"><span>Python</span><span>PHP</span><span>Java</span><span>PowerShell</span><span>MySQL</span><span>REST APIs</span></div></article>
+          <article class="skill-card accent-pink reveal"><div class="skill-icon">◈</div><p>03</p><h3>Design & Platforms</h3><div class="tags"><span>Figma</span><span>Canva</span><span>WordPress</span><span>WooCommerce</span><span>Shopify</span></div></article>
+          <article class="skill-card accent-green reveal"><div class="skill-icon">⌁</div><p>04</p><h3>Cloud & DevOps</h3><div class="tags"><span>AWS</span><span>Azure</span><span>Git</span><span>GitHub</span><span>DNS</span><span>Deployment</span></div></article>
         </div>
-        <div class="projects-grid">
-            <div class="project-card scroll-reveal">
-                <div class="project-image">
-                    <img src="IMAGES/lumoratechnologies.png" alt="lumoratechnologies" class="project-image">
-                    <div class="project-overlay">
-                        <a href="https://lumoratechnologies.co.za/" class="project-link" title="View Live">
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Lumora Technologies</h3>
-                    <p>Lumora Technologies is a leading digital agency specializing in creating exceptional web experiences, innovative mobile applications, and comprehensive digital solutions that drive business growth.</p>
-                    <div class="project-tech">
-                        <span>WordPress</span>
-                        <span>PHP</span>
-                        <span>CSS</span>
-                        <span>HTML</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card scroll-reveal">
-                <div class="project-image">
-                    <img src="IMAGES/fitbuddy.png" alt="fitbuddy" class="project-image">
-                    <div class="project-overlay">
-                        
-                        <a href="https://github.com/OratilweBotlhale/PythonSoftbot" class="project-link" title="View Code">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Fit-Buddy AI ChatBot</h3>
-                    <p>FitBuddy is an AI-driven health assistant designed to predict a person’s obesity risk based on lifestyle, diet, and activity habits.</p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>VS Code</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card scroll-reveal">
-                <div class="project-image">
-                    <img src="IMAGES/scholarX.png" alt="scholarX" class="project-image">
-                    <div class="project-overlay">
-                        <a href="https://github.com/OratilweBotlhale/ScholarX" class="project-link" title="View Code">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>ScholarX</h3>
-                    <p>ScholarX is a website for a financial support bursary that funds learners that are interested in pursuing in their dreams in the STEM industries.</p>
-                    <div class="project-tech">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="project-card scroll-reveal">
-                <div class="project-image">
-                    <img src="IMAGES/QRM.png" alt="scholarX" class="project-image">
-                    <div class="project-overlay">
-                        <a href="https://github.com/OratilweBotlhale/ScholarX" class="project-link" title="View Code">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>Quilts Risk Managers</h3>
-                    <p>Quilts Risk Managers (Pty) Ltd (QRM) is a multidisciplinary professional services company specialising in Quality Assurance, Risk Management and Inspection Services</p>
-                    <div class="project-tech">
-                        <span>HTML/CSS</span>
-                        <span>WordPress</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card scroll-reveal">
-                <div class="project-image">
-                    <img src="IMAGES/itbusiness.png" alt="scholarX" class="project-image">
-                    <div class="project-overlay">
-                        <a href="https://github.com/OratilweBotlhale/ScholarX" class="project-link" title="View Code">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>IAAS Dynamics</h3>
-                    <p>ScholarX is a website for a financial support bursary that funds learners that are interested in pursuing in their dreams in the STEM industries.</p>
-                    <div class="project-tech">
-                        <span>HTML/CSS</span>
-                        <span>JavaScript</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="project-card scroll-reveal">
-                <div class="project-image">
-                    <img src="IMAGES/securevoter.png" alt="securevoter" class="project-image">
-                    <div class="project-overlay">
-                        <a href="https://github.com/OratilweBotlhale/VotingSystem" class="project-link" title="View Code">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3>SecureVoter Voting Website</h3>
-                    <p>SecureVoter Voting Website: A voting website/system that might later implement Blockchain.</p>
-                    <div class="project-tech">
-                        <span>HTML</span>
-                        <span>JavaScript</span>
-                        <span>CSS</span>
-                    </div>
-                </div>
-            </div>  
-        </div>
+      </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section" style="background: var(--secondary-bg);">
-        <div class="section-header scroll-reveal">
-            <span class="section-tag">Journey</span>
-            <h2 class="section-title">Education & Experience</h2>
-            <p class="section-subtitle">
-                My academic background and professional journey in the tech industry.
-            </p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item scroll-reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">2026 - Present</div>
-                    <h3>Advanced Diploma in IT</h3>
-                    <h4>Current Student</h4>
-                    <p>Specializing in advanced software development, cloud computing, and system architecture.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item scroll-reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">2024 - Present</div>
-                    <h3>Freelance Web Developer</h3>
-                    <h4>Self-Employed</h4>
-                    <p>Designed and developed 20+ websites for clients using WordPress, Shopify, and custom solutions. Managed end-to-end project delivery.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item scroll-reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">2023 - 2025</div>
-                    <h3>Diploma in Information Technology</h3>
-                    <h4>Graduated</h4>
-                    <p>Comprehensive IT education covering programming, databases, networking, and software development fundamentals.</p>
-                </div>
-            </div>
-
-            <div class="timeline-item scroll-reveal">
-                <div class="timeline-dot"></div>
-                <div class="timeline-content">
-                    <div class="timeline-date">2022</div>
-                    <h3>Matriculated High School</h3>
-                    <h4>The Beginning of My Tech Career</h4>
-                </div>
-            </div>
-        </div>
+    <section id="work" class="projects section-shell">
+      <div class="section-kicker reveal">03 / Selected Work</div>
+      <div class="projects-heading reveal"><h2>Built for the<br><span>real world.</span></h2><p>A selection of commercial websites and self-directed technical projects. More work is always in progress.</p></div>
+      <div class="project-list">
+        <a class="project featured reveal" href="https://lumoratechnologies.co.za/" target="_blank" rel="noopener"><div class="project-no">01</div><div class="project-art lumora"><span>L</span></div><div class="project-info"><p>Founder Project · Live Website</p><h3>Lumora Technologies</h3><div><span>WordPress</span><span>PHP</span><span>CSS</span><span>HTML</span></div></div><b>↗</b></a>
+        <a class="project reveal" href="https://ziltrex.co.za/" target="_blank" rel="noopener"><div class="project-no">02</div><div class="project-art ziltrex"><span>Z</span></div><div class="project-info"><p>Commercial Website</p><h3>Ziltrex</h3><div><span>Web Design</span><span>WordPress</span><span>Responsive</span></div></div><b>↗</b></a>
+        <a class="project reveal" href="https://camel-trading.co.za/" target="_blank" rel="noopener"><div class="project-no">03</div><div class="project-art camel"><span>CT</span></div><div class="project-info"><p>Commercial Website</p><h3>Camel Trading</h3><div><span>Web Design</span><span>WordPress</span><span>Industrial</span></div></div><b>↗</b></a>
+        <a class="project reveal" href="https://buzzcorp.co.za/" target="_blank" rel="noopener"><div class="project-no">04</div><div class="project-art buzz"><span>B</span></div><div class="project-info"><p>Commercial Website</p><h3>Buzzcorp</h3><div><span>Web Design</span><span>Development</span><span>Responsive</span></div></div><b>↗</b></a>
+        <a class="project reveal" href="https://longshiptrading.co.za/" target="_blank" rel="noopener"><div class="project-no">05</div><div class="project-art longship"><span>LT</span></div><div class="project-info"><p>Commercial Website</p><h3>Longship Trading</h3><div><span>Logistics</span><span>Web Design</span><span>WordPress</span></div></div><b>↗</b></a>
+        <a class="project reveal" href="https://titanconsult.co.uk/" target="_blank" rel="noopener"><div class="project-no">06</div><div class="project-art titan"><span>T</span></div><div class="project-info"><p>Commercial Website</p><h3>Titan Consult</h3><div><span>Consulting</span><span>Web Design</span><span>Responsive</span></div></div><b>↗</b></a>
+      </div>
+      <div class="lab-projects reveal">
+        <div class="lab-title"><p>Development Lab</p><h3>Code-led projects</h3></div>
+        <article><span>AI / ML</span><h4>Fit-Buddy AI</h4><p>Health assistant and machine-learning pipeline designed to predict obesity risk.</p><a href="https://github.com/OratilweBotlhale" target="_blank" rel="noopener">GitHub ↗</a></article>
+        <article><span>WEB</span><h4>ScholarX</h4><p>A responsive STEM bursary discovery website built with HTML, CSS and JavaScript.</p><a href="https://github.com/OratilweBotlhale" target="_blank" rel="noopener">GitHub ↗</a></article>
+        <article><span>SECURITY</span><h4>SecureVoter</h4><p>A secure voting-system prototype with planned blockchain integration.</p><a href="https://github.com/OratilweBotlhale" target="_blank" rel="noopener">GitHub ↗</a></article>
+      </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="section-header scroll-reveal">
-            <span class="section-tag">Get In Touch</span>
-            <h2 class="section-title">Let's Work Together</h2>
-            <p class="section-subtitle">
-                Open to freelance, internship, and junior developer roles. Let’s build something impactful together.
-            </p>
+    <section id="journey" class="journey">
+      <div class="section-shell">
+        <div class="section-kicker light reveal">04 / Journey</div>
+        <div class="journey-grid">
+          <div class="journey-title reveal"><h2>Always learning.<br><span>Always building.</span></h2><p>A foundation in software development, now expanding into AI, UX, cloud and solution architecture.</p></div>
+          <div class="timeline">
+            <article class="reveal active"><time>2026 — Present</time><div><h3>Advanced Diploma in IT</h3><p>Vaal University of Technology · AI, advanced databases, UX design and emerging technologies.</p></div></article>
+            <article class="reveal"><time>May 2026 — Present</time><div><h3>Junior Web Designer</h3><p>Point B Agency · Client websites, custom development, testing and creative design.</p></div></article>
+            <article class="reveal"><time>2024 — Present</time><div><h3>Founder & Lead Developer</h3><p>Lumora Technologies · 20+ production systems for small and medium-sized businesses.</p></div></article>
+            <article class="reveal"><time>2023 — 2025</time><div><h3>Diploma in IT: Software Development</h3><p>Vaal University of Technology · 76% weighted average and 13 distinctions.</p></div></article>
+            <article class="reveal"><time>2022</time><div><h3>Matriculated</h3><p>The starting point for a career built around technology, design and practical problem-solving.</p></div></article>
+          </div>
         </div>
-        <div class="contact-container">
-            <div class="contact-info scroll-reveal">
-                <h3>Ready to start a project?</h3>
-                <p>Whether you need a website, web application, or cloud solution, I'm here to help bring your ideas to life.</p>
-
-                <div class="contact-methods">
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Email</h4>
-                            <a href="mailto:botlhaleradikeledi@gmail.com">botlhaleradikeledi@gmail.com</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>LinkedIn</h4>
-                            <a href="https://www.linkedin.com/in/oratilwe-botlhale-radikeledi-1a133b292/" target="_blank">Connect on LinkedIn</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/OratilweBotlhale" target="_blank">View My Profile</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-method">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h4>Location</h4>
-                            <span style="font-weight: 600; color: var(--text-primary);">Johannnesburg, South Africa</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="contact-form scroll-reveal">
-                <form id="contactForm" onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" name="name" required placeholder="John Doe">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="john@example.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required placeholder="Project Inquiry">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required placeholder="Tell me about your project..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
-                        <i class="fas fa-paper-plane"></i>
-                        Send Message
-                    </button>
-                </form>
-            </div>
-        </div>
+      </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-social">
-                <a href="https://www.linkedin.com/in/oratilwe-botlhale-radikeledi-1a133b292/" class="social-link" title="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/OratilweBotlhale" class="social-link" title="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:botlhaleradikeledi@gmail.com" class="social-link" title="Email">
-                    <i class="fas fa-envelope"></i>
-                </a>
-            </div>
-            <p class="footer-text">
-                © 2024 Oratilwe Botlhale Radikeledi
-            </p>
-        </div>
-    </footer>
-    <script src="script.js"></script>
+    <section id="contact" class="contact section-shell">
+      <p class="eyebrow reveal"><span></span> Available for select projects</p>
+      <h2 class="reveal">Have an idea?<br><em>Let’s build it.</em></h2>
+      <p class="contact-copy reveal">I’m open to freelance development, web design and opportunities where strong technical thinking meets thoughtful design.</p>
+      <a class="email-link reveal" href="mailto:botlhaleradikeledi@gmail.com">botlhaleradikeledi@gmail.com <span>↗</span></a>
+      <div class="contact-bottom reveal">
+        <div><a href="https://github.com/OratilweBotlhale" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/oratilwe-botlhale-radikeledi-1a133b292/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="Oratilwe_CV.pdf" download>Download CV ↓</a></div>
+        <p>Johannesburg, South Africa<br>© 2026 Oratilwe Radikeledi</p>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
 </body>
 </html>
