@@ -63,23 +63,6 @@ I am currently completing an Advanced Diploma in Information Technology at Vaal 
 - GitHub
 - DNS and deployment management
 
-## Selected Projects
-
-### Commercial Websites
-
-- [Lumora Technologies](https://lumoratechnologies.co.za/)
-- [Ziltrex](https://ziltrex.co.za/)
-- [Camel Trading](https://camel-trading.co.za/)
-- [Buzzcorp](https://buzzcorp.co.za/)
-- [Longship Trading](https://longshiptrading.co.za/)
-- [Titan Consult](https://titanconsult.co.uk/)
-
-### Development Projects
-
-- **Fit-Buddy AI** — AI health assistant and machine-learning project designed to predict obesity risk.
-- **ScholarX** — Responsive STEM bursary discovery website built with HTML, CSS and JavaScript.
-- **SecureVoter** — Secure voting-system prototype with planned blockchain integration.
-
 ## Project Structure
 
 ```text
