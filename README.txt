@@ -1,4 +1,4 @@
-# Oratilwe Radikeledi — Developer Portfolio
+## Oratilwe Radikeledi — Developer Portfolio
 
 A bold, responsive personal portfolio for **Oratilwe Botlhale Radikeledi**, a full-stack developer, web designer and aspiring cloud architect based in Johannesburg, South Africa.
 
